@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/navigation/nav_graph.xml -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_graph"
+            app:startDestination="@id/townListFragment">
+
+    <fragment
+        android:id="@+id/townListFragment"
+        android:name="com.example.weatherapp.ui.townList.TownListFragment"
+        android:label="Towns"
+        tools:layout="@layout/fragment_town_list" />
+
+    <fragment
+        android:id="@+id/addTownFragment"
+        android:name="com.example.weatherapp.ui.townAdd.TownAddFragment"
+        android:label="Add Town"
+        tools:layout="@layout/fragment_town_add" />
+</navigation>
