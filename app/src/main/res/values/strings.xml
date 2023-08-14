@@ -1,3 +1,6 @@
 <resources>
     <string name = "app_name">WeatherApp</string>
+    <string name = "no_towns_added">No towns added yet.</string>
+    <string name = "enter_town">Enter town name</string>
+    <string name = "add_town">Add Town</string>
 </resources>
