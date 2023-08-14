@@ -9,10 +9,6 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.lifecycle.withStarted
-import com.example.weatherapp.R
-import com.example.weatherapp.core.common.ApiClient
-import com.example.weatherapp.core.data.remote.dto.request.GeoLocateTownParameter
 import com.example.weatherapp.databinding.FragmentTownListBinding
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -38,8 +34,12 @@ class TownListFragment : Fragment() {
                 observeTownList()
             }
         }
+    }
 
+    override fun onResume() {
+        super.onResume()
 
+        viewModel.fetchTowns()
     }
     private suspend fun observeTownList()
     {

@@ -7,4 +7,7 @@ interface WeatherManagerRepository {
 
     suspend fun geoLocateTown(name: String): DataResult<List<LocatedTown>>
 
+    suspend fun addLocatedTown(locatedTown: LocatedTown): DataResult<Unit>
+    suspend fun fetchLocatedTowns(): DataResult<List<LocatedTown>>
+
 }

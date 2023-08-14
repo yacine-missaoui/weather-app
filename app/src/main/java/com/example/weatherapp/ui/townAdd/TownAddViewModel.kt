@@ -26,12 +26,10 @@ class TownAddViewModel (): ViewModel() {
                 is DataResult.Success -> {
                     Log.d("weather_app", "Success: ${result.data}")
                     searchChannel.send(result.data)
-
                 }
                 is DataResult.Error -> {
                     Log.d("weather_app", "Error: ${result.exception.message}")
                     searchChannel.send(emptyList())
-
                 }
             }
         }

@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "located_town_table")
 data class LocatedTownTable (
     @PrimaryKey
-    val id: Long = 1,
+    val id: String,
 
     @ColumnInfo(name = "name")
     val name: String,
