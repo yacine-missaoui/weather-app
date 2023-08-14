@@ -5,6 +5,6 @@ import com.example.weatherapp.core.domain.model.LocatedTown
 
 fun LocatedTownTable.asDomainModel():LocatedTown{
     return LocatedTown(
-        id, name, lat, lon, country, state
+        id, name, lat, lon, country, state, createdAt
     )
 }

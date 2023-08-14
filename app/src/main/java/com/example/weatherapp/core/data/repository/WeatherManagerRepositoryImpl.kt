@@ -4,6 +4,7 @@ import android.util.Log
 import com.example.weatherapp.core.common.ApiClient
 import com.example.weatherapp.core.common.DataResult
 import com.example.weatherapp.core.common.DatabaseModule
+import com.example.weatherapp.core.common.Utils.TAG
 import com.example.weatherapp.core.data.local.mapper.asDomainModel
 import com.example.weatherapp.core.data.remote.dto.request.GeoLocateTownParameter
 import com.example.weatherapp.core.data.remote.mapper.asDatabaseModel
@@ -39,7 +40,7 @@ class WeatherManagerRepositoryImpl : WeatherManagerRepository {
             DataResult.Success(Unit)
         }catch (ex: java.lang.Exception)
         {
-            Log.d("weather_app", "Error adding located town")
+            Log.d(TAG, "Error adding located town")
             ex.printStackTrace()
             DataResult.Error(ex)
         }
@@ -53,7 +54,7 @@ class WeatherManagerRepositoryImpl : WeatherManagerRepository {
             DataResult.Success(res)
         }catch (ex: Exception)
         {
-            Log.d("weather_app", "Error fetching located town")
+            Log.d(TAG, "Error fetching located town")
             ex.printStackTrace()
             DataResult.Error(ex)
         }

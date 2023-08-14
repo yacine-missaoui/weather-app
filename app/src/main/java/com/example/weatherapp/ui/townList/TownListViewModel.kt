@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.weatherapp.core.common.DataResult
+import com.example.weatherapp.core.common.Utils.TAG
 import com.example.weatherapp.core.data.repository.WeatherManagerRepositoryImpl
 import com.example.weatherapp.core.domain.model.LocatedTown
 import com.example.weatherapp.core.domain.repository.WeatherManagerRepository
@@ -24,7 +25,7 @@ class TownListViewModel (): ViewModel() {
             when(val result = weatherManagerRepository.fetchLocatedTowns())
             {
                 is DataResult.Success -> {
-                    Log.d("weather_app", "fetchTowns: ${result.data}")
+                    Log.d(TAG, "fetchTowns: ${result.data}")
                     _townsState.emit(result.data)
                 }
                 is DataResult.Error -> _townsState.emit(emptyList())

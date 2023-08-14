@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.weatherapp.core.common.DataResult
+import com.example.weatherapp.core.common.Utils.TAG
 import com.example.weatherapp.core.data.repository.WeatherManagerRepositoryImpl
 import com.example.weatherapp.core.domain.model.LocatedTown
 import com.example.weatherapp.core.domain.repository.WeatherManagerRepository
@@ -20,15 +21,15 @@ class TownAddViewModel (): ViewModel() {
 
     fun searchForTown(townName: String)
     {
-        Log.d("weather_app", "searchForTown: $townName")
+        Log.d("TAG", "searchForTown: $townName")
         viewModelScope.launch {
             when(val result = weatherManagerRepository.geoLocateTown(townName)){
                 is DataResult.Success -> {
-                    Log.d("weather_app", "Success: ${result.data}")
+                    Log.d(TAG, "Success: ${result.data}")
                     searchChannel.send(result.data)
                 }
                 is DataResult.Error -> {
-                    Log.d("weather_app", "Error: ${result.exception.message}")
+                    Log.d(TAG, "Error: ${result.exception.message}")
                     searchChannel.send(emptyList())
                 }
             }

@@ -6,10 +6,12 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.weatherapp.core.data.local.dao.WeatherDao
 import com.example.weatherapp.core.data.local.model.LocatedTownTable
+import com.example.weatherapp.core.data.local.model.TownWeatherTable
 
 @Database(
     entities = [
-        LocatedTownTable::class
+        LocatedTownTable::class,
+        TownWeatherTable::class
         ],
     version = 1,
 )

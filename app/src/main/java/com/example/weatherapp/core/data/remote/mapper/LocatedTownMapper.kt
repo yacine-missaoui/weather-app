@@ -1,5 +1,6 @@
 package com.example.weatherapp.core.data.remote.mapper
 
+import com.example.weatherapp.core.common.Utils
 import com.example.weatherapp.core.data.local.model.LocatedTownTable
 import com.example.weatherapp.core.data.remote.dto.response.LocatedTownProperty
 import com.example.weatherapp.core.domain.model.LocatedTown
@@ -11,7 +12,8 @@ fun LocatedTownProperty.asDomainModel(): LocatedTown{
         lat= lat,
         lon= lon,
         country= country,
-        state= state
+        state= state,
+        createdAt = null
     )
 }
 
@@ -22,6 +24,7 @@ fun LocatedTown.asDatabaseModel(): LocatedTownTable{
         lat= lat,
         lon= lon,
         country= country,
-        state= state
+        state= state,
+        createdAt = Utils.getFormattedDate()
     )
 }

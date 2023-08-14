@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/item_town.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:orientation="horizontal"
+    android:background="?attr/selectableItemBackground"
+
+    >
+
+    <LinearLayout
+        android:layout_width = "0dp"
+        android:layout_weight="3"
+        android:layout_height = "wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        >
+        <TextView
+            android:id="@+id/textViewTownName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"
+            android:text="Kelibia"
+            />
+
+
+        <TextView
+            android:id="@+id/textViewStateCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textSecondary"
+            android:textSize="14sp"
+            android:text="Nabeul, Tunisia"
+
+            />
+
+
+        <TextView
+            android:id="@+id/textViewDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textSecondary"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:text="Mon, 14 August 18:33"
+
+            />
+    </LinearLayout>
+     <ImageButton
+         android:id="@+id/imageButtonTownWeatherDetails"
+         android:layout_width = "70dp"
+         android:layout_height = "70dp"
+         android:src="@drawable/weather_details"
+         android:scaleType="fitCenter"
+         android:layout_gravity="center"
+         android:background="@android:color/transparent"
+         android:contentDescription = "townWeatherDetails" />
+</LinearLayout>

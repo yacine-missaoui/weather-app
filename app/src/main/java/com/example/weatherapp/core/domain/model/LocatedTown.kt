@@ -8,4 +8,5 @@ data class LocatedTown
     val lon: Double,
     val country: String,
     val state: String,
+    val createdAt: String?
 )

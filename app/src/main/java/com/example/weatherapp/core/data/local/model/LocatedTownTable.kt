@@ -23,6 +23,9 @@ data class LocatedTownTable (
     val country: String,
 
     @ColumnInfo(name = "state")
-    val state: String
+    val state: String,
+
+    @ColumnInfo(name = "created_at")
+    val createdAt: String
     )
 
