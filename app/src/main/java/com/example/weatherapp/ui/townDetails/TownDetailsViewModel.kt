@@ -12,7 +12,7 @@ import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
-class TownDetailsViewModel(): ViewModel() {
+class TownDetailsViewModel: ViewModel() {
     private val weatherManagerRepository : WeatherManagerRepository = WeatherManagerRepositoryImpl()
     private val weatherChannel = Channel<TownWeather>()
     val weatherFlow = weatherChannel.receiveAsFlow()

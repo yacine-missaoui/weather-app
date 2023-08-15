@@ -31,10 +31,8 @@ class WeatherManagerRepositoryImpl : WeatherManagerRepository {
                 ex.printStackTrace()
                 DataResult.Error(ex)
             }
-
         }
     }
-
     override suspend fun addLocatedTown(locatedTown: LocatedTown): DataResult<Unit> {
         return try {
             weatherDao.addLocatedTown(locatedTown.asDatabaseModel())
