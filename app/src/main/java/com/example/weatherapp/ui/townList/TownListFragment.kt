@@ -71,7 +71,9 @@ class TownListFragment : Fragment() {
     {
         Log.d(TAG, "handleLocatedTownClick: ${clickedTown.id}")
         val intent = Intent(context, TownDetailsActivity::class.java)
-        intent.putExtra("townId",clickedTown.id)
+        intent.putExtra("id",clickedTown.id)
+        intent.putExtra("lat",clickedTown.lat)
+        intent.putExtra("lon",clickedTown.lon)
         startActivity(intent)
     }
 

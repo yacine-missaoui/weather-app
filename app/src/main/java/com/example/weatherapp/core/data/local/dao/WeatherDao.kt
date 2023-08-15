@@ -18,5 +18,7 @@ interface WeatherDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addTownWeather(townWeather: TownWeatherTable)
 
+    @Query("SELECT * FROM town_weather_table WHERE :townId = town_id LIMIT 1")
+    suspend fun fetchTownWeatherByTownId(townId:String): TownWeatherTable
 
 }

@@ -1,6 +1,6 @@
 package com.example.weatherapp.core.domain.model
 
-data class Town(
+data class TownWeather(
     val timeZone:String,
     val sunrise: Long,
     val sunset: Long,
@@ -11,5 +11,4 @@ data class Town(
     val uvi: Double,
     val wind: Int,
     val humidity: Int,
-
-    )
+)

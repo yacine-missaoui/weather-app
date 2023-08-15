@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "town_weather_table")
 data class TownWeatherTable (
     @PrimaryKey
-    val id: Long,
+    val id: Long?,
 
     @ColumnInfo(name = "town_id")
     val townId: String,
@@ -16,10 +16,10 @@ data class TownWeatherTable (
     val timeZone: String,
 
     @ColumnInfo(name = "sunrise")
-    val sunrise: Double,
+    val sunrise: Long,
 
     @ColumnInfo(name = "sunset")
-    val sunset: Double,
+    val sunset: Long,
 
     @ColumnInfo(name = "main_weather")
     val mainWeather: String,
