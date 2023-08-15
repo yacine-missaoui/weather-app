@@ -3,11 +3,12 @@
     <item
         android:id="@+id/townListFragment"
         android:icon="@drawable/round_list"
-        android:title="Towns" />
+        android:title="@string/towns"
+        />
 
     <item
         android:id="@+id/addTownFragment"
         android:icon="@drawable/round_add"
-        android:title="Add Town"
+        android:title="@string/add_town"
         />
 </menu>

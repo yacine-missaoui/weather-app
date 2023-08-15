@@ -2,13 +2,11 @@ package com.example.weatherapp.ui.townDetails
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.weatherapp.core.common.Utils
-import com.example.weatherapp.core.common.Utils.TAG
 import com.example.weatherapp.core.domain.model.TownWeather
 import com.example.weatherapp.databinding.ActivityTownDetailsBinding
 import kotlinx.coroutines.Dispatchers
@@ -30,16 +28,12 @@ class TownDetailsActivity : AppCompatActivity() {
         val townId = intent.getStringExtra("id")
         val townLat = intent.getDoubleExtra("lat", 0.0)
         val townLon = intent.getDoubleExtra("lon", 0.0)
-        Log.d(TAG, "onCreate: $townId $townLat $townLon")
 
         townId?.let {
-            if(!Utils.isInternetAvailable(this))
+            if(Utils.isInternetAvailable(this))
             {
-                Log.d(TAG, "isInternetAvailable: true")
                 viewModel.fetchTownData(it, townLat, townLon)
             }else {
-                Log.d(TAG, "isInternetAvailable: false")
-
                 viewModel.fetchTownDataFromCache(it)
             }
         }
@@ -48,7 +42,6 @@ class TownDetailsActivity : AppCompatActivity() {
     {
         lifecycleScope.launch(Dispatchers.Main) {
             viewModel.weatherFlow.collect { res ->
-                Log.d(TAG, "weatherFlow: $res")
                 showContent()
                 displayData(res)
             }

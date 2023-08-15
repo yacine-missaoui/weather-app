@@ -9,4 +9,5 @@
     <color name="backgroundColor">#FFFFFF</color>
     <color name="textPrimary">#212121</color>
     <color name="textSecondary">#757575</color>
+    <color name = "grayBackgroundColor">#E0E0E0</color>
 </resources>

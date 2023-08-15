@@ -17,17 +17,17 @@
         android:padding="16dp"
         android:orientation="vertical"
         android:background="@color/colorPrimary"
-        android:visibility="gone"
 
         >
         <androidx.cardview.widget.CardView
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp"
-            app:cardBackgroundColor="@color/colorPrimaryDark">
+            android:layout_margin="@dimen/cardview_margin"
+            app:cardCornerRadius="@dimen/cardview_corner_radius"
+            app:cardElevation="@dimen/cardview_elevation"
+            app:cardBackgroundColor="@color/colorPrimaryDark"
+            >
             <LinearLayout
                 android:layout_width = "match_parent"
                 android:layout_height = "wrap_content"
@@ -41,7 +41,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <!-- Other Weather Information -->
                     <TextView
                         android:id="@+id/tempTextView"
                         android:layout_width="wrap_content"
@@ -70,7 +69,6 @@
                     android:layout_height = "80dp"
                     android:src="@drawable/weather_forecast"
                     android:layout_gravity="center"
-
                     />
             </LinearLayout>
 
@@ -80,10 +78,12 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp"
-            app:cardBackgroundColor="@color/colorPrimaryDark">
+            android:layout_margin="@dimen/cardview_margin"
+            app:cardCornerRadius="@dimen/cardview_corner_radius"
+            app:cardElevation="@dimen/cardview_elevation"
+            app:cardBackgroundColor="@color/colorPrimaryDark"
+
+            >
 
             <LinearLayout
                 android:layout_width = "match_parent"
@@ -118,7 +118,7 @@
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:gravity="start"
-                        android:text="Sunrise"
+                        android:text="@string/sunrise"
                         android:textStyle="bold"
                         android:textColor="@color/white"
                         />
@@ -128,7 +128,7 @@
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:gravity="end"
-                        android:text="Sunset"
+                        android:text="@string/sunset"
                         android:textStyle="bold"
                         android:textColor="@color/white"
                         />
@@ -141,7 +141,6 @@
                     android:layout_marginTop="10dp"
                     >
 
-                    <!-- Other Weather Information -->
                     <TextView
                         android:id="@+id/sunriseTextView"
                         android:layout_width="0dp"
@@ -176,10 +175,10 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="8dp"
                 android:layout_marginEnd="5dp"
-                app:cardElevation="4dp"
                 app:cardBackgroundColor="@color/colorPrimaryDark"
+                app:cardCornerRadius="@dimen/cardview_corner_radius"
+                app:cardElevation="@dimen/cardview_elevation"
                 >
 
                 <LinearLayout
@@ -200,7 +199,7 @@
                     <TextView
                         android:layout_width = "wrap_content"
                         android:layout_height = "wrap_content"
-                        android:text = "Weather"
+                        android:text = "@string/weather"
                         android:textColor = "@color/white"
                         android:textStyle = "bold" />
 
@@ -216,9 +215,9 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="8dp"
                 android:layout_marginStart="5dp"
-                app:cardElevation="4dp"
+                app:cardCornerRadius="@dimen/cardview_corner_radius"
+                app:cardElevation="@dimen/cardview_elevation"
                 app:cardBackgroundColor="@color/colorPrimaryDark"
                 >
                 <LinearLayout
@@ -238,7 +237,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Humidity"
+                        android:text="@string/humidity"
                         android:textStyle="bold"
                         android:textColor="@color/white"
                         />
@@ -262,13 +261,12 @@
 
             >
             <androidx.cardview.widget.CardView
-
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="8dp"
                 android:layout_marginEnd="5dp"
-                app:cardElevation="4dp"
+                app:cardCornerRadius="@dimen/cardview_corner_radius"
+                app:cardElevation="@dimen/cardview_elevation"
                 app:cardBackgroundColor="@color/colorPrimaryDark"
                 >
 
@@ -289,7 +287,7 @@
                     <TextView
                         android:layout_width = "wrap_content"
                         android:layout_height = "wrap_content"
-                        android:text = "UV Index"
+                        android:text = "@string/uvi"
                         android:textColor = "@color/white"
                         android:textStyle = "bold" />
 
@@ -306,9 +304,9 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="8dp"
                 android:layout_marginStart="5dp"
-                app:cardElevation="4dp"
+                app:cardCornerRadius="@dimen/cardview_corner_radius"
+                app:cardElevation="@dimen/cardview_elevation"
                 app:cardBackgroundColor="@color/colorPrimaryDark"
                 >
                 <LinearLayout
@@ -327,7 +325,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Wind"
+                        android:text="@string/wind"
                         android:textStyle="bold"
                         android:textColor="@color/white"
                         />

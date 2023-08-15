@@ -25,7 +25,6 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginBottom="4dp"
-            android:text="Kelibia"
             />
 
 
@@ -35,10 +34,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/textSecondary"
             android:textSize="14sp"
-            android:text="Nabeul, Tunisia"
-
             />
-
 
         <TextView
             android:id="@+id/textViewDate"
@@ -47,10 +43,10 @@
             android:textColor="@color/textSecondary"
             android:textSize="14sp"
             android:layout_marginTop="4dp"
-            android:text="Mon, 14 August 18:33"
 
             />
     </LinearLayout>
+
      <ImageButton
          android:id="@+id/imageButtonTownWeatherDetails"
          android:layout_width = "70dp"
@@ -59,5 +55,5 @@
          android:scaleType="fitCenter"
          android:layout_gravity="center"
          android:background="@android:color/transparent"
-         android:contentDescription = "townWeatherDetails" />
+         />
 </LinearLayout>

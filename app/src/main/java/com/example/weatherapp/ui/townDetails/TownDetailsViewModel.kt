@@ -24,11 +24,9 @@ class TownDetailsViewModel(): ViewModel() {
             when(val result = weatherManagerRepository.getTownWeather(id, lat, lon))
             {
                 is DataResult.Success -> {
-                    Log.d(Utils.TAG, "getTownWeather: ${result.data}")
                     weatherChannel.send(result.data)
                 }
                 is DataResult.Error -> {
-                    Log.d(Utils.TAG, "getTownWeather: error ")
                     weatherChannel.send(
                         TownWeather(
                             timeZone = "America/Chicago",

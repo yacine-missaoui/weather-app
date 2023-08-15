@@ -1,7 +1,6 @@
 package com.example.weatherapp.ui.townAdd
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,9 +10,9 @@ import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.weatherapp.R
 import com.example.weatherapp.core.common.DatabaseModule
 import com.example.weatherapp.core.common.Utils
-import com.example.weatherapp.core.common.Utils.TAG
 import com.example.weatherapp.core.data.remote.mapper.asDatabaseModel
 import com.example.weatherapp.core.domain.model.LocatedTown
 import com.example.weatherapp.databinding.FragmentTownAddBinding
@@ -58,7 +57,6 @@ class TownAddFragment : Fragment() {
             searchAdapter = SearchTownAdapter(locatedTownsSearchResult){
                 locatedTown = it
                 binding.editTextTownName.setText(Utils.generateTownDisplayName(it))
-                Log.d(TAG, "Clicked on: $locatedTown")
             }
             townsToAddRecyclerView.adapter = searchAdapter
             townsToAddRecyclerView.layoutManager = LinearLayoutManager(requireContext())
@@ -88,15 +86,15 @@ class TownAddFragment : Fragment() {
 
                 if (hasLocatedTown || hasSearchResults) {
                     val selectedTown = locatedTown ?: locatedTownsSearchResult.first()
-
                     lifecycleScope.launch {
                         DatabaseModule.townDao().addLocatedTown(selectedTown.asDatabaseModel())
                     }
-
                     clearUI()
-                    Toast.makeText(context, "Town successfully added!", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, resources.getText(R.string.town_add_success), Toast
+                        .LENGTH_LONG).show()
                 }else {
-                    Toast.makeText(context,"No town found to add!",Toast.LENGTH_LONG).show()
+                    Toast.makeText(context,resources.getText(R.string.no_town_found_to_add),Toast
+                        .LENGTH_LONG).show()
                 }
             }
 
@@ -113,10 +111,9 @@ class TownAddFragment : Fragment() {
     {
         viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Main) {
             viewModel.searchFlow.collect { searchResult ->
-                Log.d(TAG, "observeTownSearch: $searchResult")
                 showLoading(false)
                 if(searchResult.isEmpty()){
-                    Toast.makeText(context,"No town with that name was found!", Toast
+                    Toast.makeText(context,resources.getText(R.string.no_town_found), Toast
                         .LENGTH_LONG).show()
                     return@collect
                 }

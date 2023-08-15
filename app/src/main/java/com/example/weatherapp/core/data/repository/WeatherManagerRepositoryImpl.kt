@@ -1,10 +1,8 @@
 package com.example.weatherapp.core.data.repository
 
-import android.util.Log
 import com.example.weatherapp.core.common.ApiClient
 import com.example.weatherapp.core.common.DataResult
 import com.example.weatherapp.core.common.DatabaseModule
-import com.example.weatherapp.core.common.Utils.TAG
 import com.example.weatherapp.core.data.local.mapper.asDomainModel
 import com.example.weatherapp.core.data.local.model.TownWeatherTable
 import com.example.weatherapp.core.data.remote.dto.request.GeoLocateTownParameter
@@ -43,7 +41,6 @@ class WeatherManagerRepositoryImpl : WeatherManagerRepository {
             DataResult.Success(Unit)
         }catch (ex: java.lang.Exception)
         {
-            Log.d(TAG, "Error adding located town")
             ex.printStackTrace()
             DataResult.Error(ex)
         }
@@ -57,7 +54,6 @@ class WeatherManagerRepositoryImpl : WeatherManagerRepository {
             DataResult.Success(res)
         }catch (ex: Exception)
         {
-            Log.d(TAG, "Error fetching located towns")
             ex.printStackTrace()
             DataResult.Error(ex)
         }
@@ -96,12 +92,10 @@ class WeatherManagerRepositoryImpl : WeatherManagerRepository {
     override suspend fun fetchTownWeatherByTownId(id: String): DataResult<TownWeather> {
         return try {
             val res = weatherDao.fetchTownWeatherByTownId(id)
-            Log.d(TAG, "fetchTownWeatherByTownId: $res")
 
             DataResult.Success(res.asDomainModel())
         }catch (ex: Exception)
         {
-            Log.d(TAG, "Error fetching town weather")
             ex.printStackTrace()
             DataResult.Error(ex)
         }

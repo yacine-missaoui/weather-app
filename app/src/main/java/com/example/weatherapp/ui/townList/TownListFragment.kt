@@ -2,7 +2,6 @@ package com.example.weatherapp.ui.townList
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +11,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.weatherapp.core.common.Utils.TAG
 import com.example.weatherapp.core.domain.model.LocatedTown
 import com.example.weatherapp.databinding.FragmentTownListBinding
 import com.example.weatherapp.ui.townDetails.TownDetailsActivity
@@ -69,7 +67,6 @@ class TownListFragment : Fragment() {
 
     private fun handleLocatedTownClick(clickedTown: LocatedTown)
     {
-        Log.d(TAG, "handleLocatedTownClick: ${clickedTown.id}")
         val intent = Intent(context, TownDetailsActivity::class.java)
         intent.putExtra("id",clickedTown.id)
         intent.putExtra("lat",clickedTown.lat)

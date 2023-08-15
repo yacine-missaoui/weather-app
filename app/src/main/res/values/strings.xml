@@ -3,4 +3,14 @@
     <string name = "no_towns_added">No towns added yet.</string>
     <string name = "enter_town">Enter town name</string>
     <string name = "add_town">Add Town</string>
+    <string name = "weather">Weather</string>
+    <string name = "humidity">Humidity</string>
+    <string name = "uvi">UV Index</string>
+    <string name = "wind">Wind</string>
+    <string name = "sunset">Sunset</string>
+    <string name = "sunrise">Sunrise</string>
+    <string name = "towns">Towns</string>
+    <string name = "no_town_found">No town with that name was found!</string>
+    <string name = "town_add_success">Town successfully added!</string>
+    <string name = "no_town_found_to_add">No town found to add!</string>
 </resources>

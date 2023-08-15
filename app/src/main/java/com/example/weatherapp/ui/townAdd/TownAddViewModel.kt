@@ -1,10 +1,8 @@
 package com.example.weatherapp.ui.townAdd
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.weatherapp.core.common.DataResult
-import com.example.weatherapp.core.common.Utils.TAG
 import com.example.weatherapp.core.data.repository.WeatherManagerRepositoryImpl
 import com.example.weatherapp.core.domain.model.LocatedTown
 import com.example.weatherapp.core.domain.repository.WeatherManagerRepository
@@ -12,7 +10,7 @@ import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
-class TownAddViewModel (): ViewModel() {
+class TownAddViewModel : ViewModel() {
 
     private val weatherManagerRepository : WeatherManagerRepository = WeatherManagerRepositoryImpl()
 
@@ -21,15 +19,12 @@ class TownAddViewModel (): ViewModel() {
 
     fun searchForTown(townName: String)
     {
-        Log.d("TAG", "searchForTown: $townName")
         viewModelScope.launch {
             when(val result = weatherManagerRepository.geoLocateTown(townName)){
                 is DataResult.Success -> {
-                    Log.d(TAG, "Success: ${result.data}")
                     searchChannel.send(result.data)
                 }
                 is DataResult.Error -> {
-                    Log.d(TAG, "Error: ${result.exception.message}")
                     searchChannel.send(emptyList())
                 }
             }
