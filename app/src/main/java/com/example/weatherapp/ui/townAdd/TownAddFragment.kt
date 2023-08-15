@@ -17,6 +17,7 @@ import com.example.weatherapp.core.common.Utils.TAG
 import com.example.weatherapp.core.data.remote.mapper.asDatabaseModel
 import com.example.weatherapp.core.domain.model.LocatedTown
 import com.example.weatherapp.databinding.FragmentTownAddBinding
+import com.example.weatherapp.ui.townAdd.adapter.SearchTownAdapter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

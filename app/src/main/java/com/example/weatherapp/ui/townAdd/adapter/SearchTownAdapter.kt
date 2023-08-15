@@ -1,4 +1,4 @@
-package com.example.weatherapp.ui.townAdd
+package com.example.weatherapp.ui.townAdd.adapter
 
 
 import android.view.LayoutInflater
@@ -26,7 +26,7 @@ class SearchTownAdapter(private val dataSet: List<LocatedTown>, private val onIt
 
 
     override fun onBindViewHolder(viewHolder: SearchTownViewHolder, position: Int) {
-        val stateCountryTxt ="${dataSet[position].state}, ${Utils.getCountryNameFromCode(dataSet[position].country)}"
+        val stateCountryTxt = Utils.generateTownDisplayName(dataSet[position])
 
         viewHolder.searchedTownTextview.text = stateCountryTxt
         viewHolder.itemView.setOnClickListener {

@@ -54,7 +54,7 @@ class WeatherManagerRepositoryImpl : WeatherManagerRepository {
             DataResult.Success(res)
         }catch (ex: Exception)
         {
-            Log.d(TAG, "Error fetching located town")
+            Log.d(TAG, "Error fetching located towns")
             ex.printStackTrace()
             DataResult.Error(ex)
         }
